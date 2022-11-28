@@ -1,0 +1,65 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: darkolivegreen;
+    font-family: cursive;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 800;
+}
+
+fieldset {
+   padding-top: 3rem;
+   border: 2px solid black;
+}
+
+input {
+    text-align: center;
+    border: 2px solid black;
+    height: 2rem;
+    background-color: #ddd;
+    border-radius: .5rem;
+}
+
+#VS {
+    padding: .2rem;
+    border: 3px solid black;
+    border-radius: 5rem;
+    background-color: darkred;
+}
+
+#start {
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    background-color: darkred;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin-top: .5rem;
+    padding: .5rem;
+
+}
+
+#gameBoard {
+    background-color: #232323;
+    display: grid;
+    grid-template-columns: 7rem 7rem 7rem;
+    grid-template-rows: 7rem 7rem 7rem;
+    gap: .6rem;
+    margin: auto;
+    max-width: 22rem;
+    border: 1rem solid #232323;
+}
+
+#gameBoard span {
+    background-color: #ddd;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    font-size: 5rem;
+}
+
+#gameBoard span.win {
+    background-color: rgb(70, 176, 242);
+}

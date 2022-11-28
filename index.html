@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO DA VELHA</title>
+
+    <!-- link css -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- link javaScript -->
+    <script src="./index.js" defer></script>
+
+</head>
+<body>
+
+   
+    <h1>Jogo da Velha</h1>
+
+    <fieldset>
+        <label for="player1">Jogador ( X ) - </label>
+        <input type="text" id="player1" placeholder=" Nome do Jogador 1">
+        <label id="VS">VS</label>
+        <label for="player2">Jogador ( O ) - </label>
+        <input type="text" id="player2"  placeholder=" Nome do Jogador 2"><br><br>
+    </fieldset>  
+        
+    <button id="start"> Começar!</button>
+   
+    <h2>Vez de : <span id="turnPlayer"></span></h2>
+    
+    <div id="gameBoard">
+        <span class="cursor-pointer" data-region="0.0"></span>
+        <span class="cursor-pointer" data-region="0.1"></span>
+        <span class="cursor-pointer" data-region="0.2"></span>
+        <span class="cursor-pointer" data-region="1.0"></span>
+        <span class="cursor-pointer" data-region="1.1"></span>
+        <span class="cursor-pointer" data-region="1.2"></span>
+        <span class="cursor-pointer" data-region="2.0"></span>
+        <span class="cursor-pointer" data-region="2.1"></span>
+        <span class="cursor-pointer" data-region="2.2"></span>
+    </div>
+
+</body>
+</html>
