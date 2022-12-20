@@ -3,10 +3,15 @@ body{
     padding: 0px;
     box-sizing: border-box;
     background-color: #494848;
-    font-family: cursive;
+    font-family: 'Orbitron', sans-serif;
     font-size: 20px;
     text-align: center;
     font-weight: 800;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 fieldset {
