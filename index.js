@@ -8,12 +8,23 @@ function updateTitle() {
   document.getElementById('turnPlayer').innerText = playerInput.value
 }
 
+function clearBoard() {
+  // Percorre todas as linhas da matriz
+  for (let i = 0; i < vBoard.length; i++) {
+    // Percorre todas as colunas da matriz
+    for (let j = 0; j < vBoard[i].length; j++) {
+      // Redefine o valor da célula para um valor inicial (por exemplo, uma string vazia)
+      vBoard[i][j] = " ";
+    }
+  }
+}
+
 function initializeGame() {
   // Inicializa as variáveis globais 
   vBoard = [['', '', ''], ['', '', ''], ['', '', '']]
   turnPlayer = 'player1'
   // Ajusta o título da página (caso seja necessário)
-  document.querySelector('h2').innerHTML = 'Vez de: <span id="turnPlayer"></span>'
+  document.querySelector('h2').innerHTML = '<span id="turnPlayer"></span>'
   updateTitle()
   // Limpa o tabuleiro (caso seja necessário) e adiciona os eventos de clique
   boardRegions.forEach(function (element) {
@@ -46,17 +57,27 @@ function getWinRegions() {
 }
 // Desabilita uma região do tabuleiro para que não seja mais clicável
 function disableRegion(element) {
-  element.classList.remove('cursor-pointer')
-  element.removeEventListener('click', handleBoardClick)
+  if (getWinRegions) {
+    element.classList.remove('region');
+    element.removeEventListener('click', handleBoardClick);
+    element.classList.remove('cursor-pointer');
+  }
 }
 // Pinta as regiões onde o jogador venceu e mostra seu nome na tela
 function handleWin(regions) {
   regions.forEach(function (region) {
-    document.querySelector('[data-region="' + region + '"]').classList.add('win')
-  })
-  const playerName = document.getElementById(turnPlayer).value
-  document.querySelector('h2').innerHTML = playerName + ' venceu!'
+    document
+      .querySelector('[data-region="' + region + '"]')
+      .classList.add("win");
+  });
+
+  const playerName = document.getElementById(turnPlayer).value;
+  document.querySelector("h2").innerHTML = playerName + " venceu!";
+
+  // Chamada da função para limpar a matriz após um vencedor ser determinado
+  clearBoard();
 }
+
 
 function handleBoardClick(ev) {
   // Obtém os índices da região clicada
@@ -78,19 +99,22 @@ function handleBoardClick(ev) {
   // Verifica se alguém venceu
   const winRegions = getWinRegions()
   if (winRegions.length > 0) {
-    handleWin(winRegions)
+    handleWin(winRegions);
   } else if (vBoard.flat().includes('')) {
-    turnPlayer = turnPlayer === 'player1' ? 'player2' : 'player1'
-    updateTitle()
+    turnPlayer = turnPlayer === "player1" ? "player2" : "player1";
+    updateTitle();
   } else {
     document.querySelector('h2').innerHTML = 'Empate!'
   }
+
+  
 }
+
+
 // Adiciona o evento no botão que inicia o jogo
 document.getElementById('start').addEventListener('click', initializeGame)
 
 // TIMER
-
 const currentTime = () => {
   const el = document.querySelector("h1");
 

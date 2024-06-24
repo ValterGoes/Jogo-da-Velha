@@ -4,51 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>JOGO DA VELHA</title>
 
     <!-- link google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Rampart+One&family=Rubik+80s+Fade&display=swap" rel="stylesheet">
+   
     <!-- link css -->
     <link rel="stylesheet" href="./style.css">
+    
     <!-- link javaScript -->
     <script src="./index.js" defer></script>
 
 </head>
 <body>
 
-    
+    <header>
+        <div>
+            <input type="text" id="player1" placeholder=" Nome do Jogador 1">
+            <label for="player1"> - ( X ) Jogador</label>
+            <span class="x"> X </span>
+            <label for="player2">Jogador ( O ) - </label>
+            <input type="text" id="player2" placeholder=" Nome do Jogador 2">
+        </div>
+
+        <button id="start">Começar</button>
+    </header>  
+
     <h2>Jogo da Velha</h2>
 
-    <fieldset>
-        <input type="text" id="player1" placeholder=" Nome do Jogador 1">
-        <label for="player1"> - ( X ) Jogador</label>
-        <label id="VS">VS</label>
-        <label for="player2">Jogador ( O ) - </label>
-        <input type="text" id="player2"  placeholder=" Nome do Jogador 2"><br><br>
-    </fieldset>  
+    <main>
+        <div id="gameBoard">
+            <span class="region" data-region="0.0"></span>
+            <span class="region" data-region="0.1"></span>
+            <span class="region" data-region="0.2"></span>
+            <span class="region" data-region="1.0"></span>
+            <span class="region" data-region="1.1"></span>
+            <span class="region" data-region="1.2"></span>
+            <span class="region" data-region="2.0"></span>
+            <span class="region" data-region="2.1"></span>
+            <span class="region" data-region="2.2"></span>
+        </div>
         
-    <button id="start"> Começar!</button>
-   
-    <h2>Vez de : <span id="turnPlayer"></span></h2>
-    
-    <div id="gameBoard">
-        <span class="cursor-pointer" data-region="0.0"></span>
-        <span class="cursor-pointer" data-region="0.1"></span>
-        <span class="cursor-pointer" data-region="0.2"></span>
-        <span class="cursor-pointer" data-region="1.0"></span>
-        <span class="cursor-pointer" data-region="1.1"></span>
-        <span class="cursor-pointer" data-region="1.2"></span>
-        <span class="cursor-pointer" data-region="2.0"></span>
-        <span class="cursor-pointer" data-region="2.1"></span>
-        <span class="cursor-pointer" data-region="2.2"></span>
-    </div>
-
-    <div class="container-fluid">
-        <h5>Horário Atual</h5>
-        <h1></h1>
-    </div>
+        <div class="timer">
+            <h5>Horário Atual</h5>
+            <h1></h1>
+        </div>
+    </main>
 
 </body>
 </html>
